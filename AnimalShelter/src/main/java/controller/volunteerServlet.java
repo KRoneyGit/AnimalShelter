@@ -32,17 +32,17 @@ public class volunteerServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		String name = request.getParameter("volunteerName");
-		int totalHours = Integer.parseInt(request.getParameter("totalHours"));
+		double totalHours = Double.parseDouble(request.getParameter("totalHours"));
 		String days = request.getParameter("volunteerDays");
 		
 		VolunteerModel volunteer = new VolunteerModel(name,totalHours,days);
-		volunteer.setDailyHours();
 		
-//		getServletContext().getRequestDispatcher("/volunteerResult.jsp").forward(request, response);
+		request.setAttribute("volunteer", volunteer);
+		getServletContext().getRequestDispatcher("/volunteerResult.jsp").forward(request, response);
 		
-		PrintWriter writer = response.getWriter();
-		writer.println(volunteer.toString());
-		writer.close();
+//		PrintWriter writer = response.getWriter();
+//		writer.println(volunteer.toString());
+//		writer.close();
 	}
 
 }

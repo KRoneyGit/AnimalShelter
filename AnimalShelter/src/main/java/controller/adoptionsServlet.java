@@ -37,11 +37,12 @@ public class adoptionsServlet extends HttpServlet {
 		
 		AdoptionModel pet = new AdoptionModel(name,species,supplies);
 		
-//		getServletContext().getRequestDispatcher("/adoptionResult.jsp").forward(request, response);
+		request.setAttribute("pet", pet);
+		getServletContext().getRequestDispatcher("/adoptionResult.jsp").forward(request, response);
 		
-		PrintWriter writer = response.getWriter();
-		writer.println(pet.toString());
-		writer.close();
+//		PrintWriter writer = response.getWriter();
+//		writer.println(pet.toString());
+//		writer.close();
 	}
 
 }

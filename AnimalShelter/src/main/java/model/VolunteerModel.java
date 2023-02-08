@@ -7,14 +7,14 @@ package model;
 */
 public class VolunteerModel {
 	private String volunteerName;
-	private int totalHours;
+	private double totalHours;
 	private String volunteerDays;
-	private float dailyHours;
+	private double dailyHours;
 	
 	public VolunteerModel() {
 		super();
 	}
-	public VolunteerModel(String name, int hours, String days) {
+	public VolunteerModel(String name, double hours, String days) {
 		this.volunteerName = name;
 		this.totalHours = hours;
 		this.volunteerDays = days;
@@ -27,10 +27,10 @@ public class VolunteerModel {
 	public void setVolunteerName(String volunteerName) {
 		this.volunteerName = volunteerName;
 	}
-	public int getTotalHours() {
+	public double getTotalHours() {
 		return totalHours;
 	}
-	public void setTotalHours(int totalHours) {
+	public void setTotalHours(double totalHours) {
 		this.totalHours = totalHours;
 	}
 	public String getVolunteerDays() {
@@ -39,7 +39,7 @@ public class VolunteerModel {
 	public void setVolunteerDays(String volunteerDays) {
 		this.volunteerDays = volunteerDays;
 	}
-	public float getDailyHours() {
+	public double getDailyHours() {
 		return dailyHours;
 	}
 	public void setDailyHours() {
@@ -52,6 +52,8 @@ public class VolunteerModel {
 		else {
 			this.dailyHours = this.totalHours / 7;
 		}
+		this.dailyHours = Math.round(this.dailyHours * 10);
+		this.dailyHours = this.dailyHours / 10;
 	}
 	@Override
 	public String toString() {

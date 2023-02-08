@@ -29,7 +29,7 @@
 			<label>Weekend only:</label>
 			<input type="radio" name="volunteerDays" value="weekend" /><br/>
 			<label>Weekdays and weekend:</label>
-			<input type="radio" name="volunteerDays" value="fullWeek" />
+			<input type="radio" name="volunteerDays" value="full week" />
 		</div><br/>
 		<div>
 			<input type="submit" value="Volunteer" />

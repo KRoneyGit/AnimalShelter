@@ -7,7 +7,8 @@
 <title>Insert title here</title>
 </head>
 <body>
-
+	<h1>Thank you for Volunteering!</h1>
+	<p>By volunteering during the ${volunteer.getVolunteerDays()} you will be volunteering ${volunteer.getDailyHours()} hours each day.</p>
 <a href="index.jsp">Go Home</a>
 <a href="adoptions.jsp">Adopt</a>
 </body>
